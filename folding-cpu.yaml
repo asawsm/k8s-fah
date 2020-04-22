@@ -17,7 +17,7 @@ spec:
   selector:
     matchLabels:
       app: fah-cpu
-  replicas: 2 # Set number of replicas to run - one replica per node
+  replicas: 3 # Set number of replicas to run - one replica per node
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -54,10 +54,10 @@ spec:
           resources:
             limits:
               cpu: 1000m # How much CPU you wish to donate per node
-              memory: 512Mi
+              memory: 1536Mi
             requests:
               cpu: 100m
-              memory: 512Mi
+              memory: 1536Mi
           # Make the container harder to break out of or exploit
           securityContext:
             runAsNonRoot: true
